@@ -199,18 +199,17 @@ function createAllocationChart(allocations) {
     let chartHTML = '<div class="allocation-chart">';
     
     Object.entries(allocations).forEach(([assetClass, percentage]) => {
-        if (percentage > 0) {
-            const colorClass = assetClass.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
-            chartHTML += `
-                <div class="allocation-bar">
-                    <div class="allocation-label">${assetClass}</div>
-                    <div class="allocation-visual">
-                        <div class="allocation-fill ${colorClass}" style="width: ${percentage}%"></div>
-                    </div>
-                    <div class="allocation-percentage">${percentage}%</div>
+        // Show all bars, even 0% ones
+        const colorClass = assetClass.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '').replace(/\-+/g, '-');
+        chartHTML += `
+            <div class="allocation-bar">
+                <div class="allocation-label">${assetClass}</div>
+                <div class="allocation-visual">
+                    <div class="allocation-fill ${colorClass}" style="width: ${percentage}%"></div>
                 </div>
-            `;
-        }
+                <div class="allocation-percentage">${percentage}%</div>
+            </div>
+        `;
     });
     
     chartHTML += '</div>';
