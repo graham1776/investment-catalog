@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Investment Catalog</div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="allocations.html" class="nav-link">Allocations</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+            </div>
+            <div class="tagline">Complete directory of investment opportunities and vehicles</div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar" id="sidebar">
+             <!-- Sidebar content will be built by JS -->
+        </aside>
+
+        <div class="content-area">
+            <div class="breadcrumb" id="breadcrumb">
+                <span>All Investments</span>
+                <span class="breadcrumb-counter" id="breadcrumb-counter">0 of 0</span>
+            </div>
+            
+            <div id="filters">
+                <label for="risk-filter">Risk Level:</label>
+                <select id="risk-filter">
+                    <option value="all">All</option>
+                </select>
+
+                <label for="liquidity-filter">Liquidity:</label>
+                <select id="liquidity-filter">
+                    <option value="all">All</option>
+                </select>
+                
+                <button id="reset-filters">Reset Filters</button>
+            </div>
+
+            <div id="content" class="table-container">
+                <!-- Table will be rendered here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Detail Modal -->
+    <div id="investmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span id="modalIcon" class="modal-icon"></span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Description</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-grid">
+                    <div class="modal-section">
+                        <h3>Expected Return</h3>
+                        <p id="modalReturn"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Risk Level</h3>
+                        <p id="modalRisk"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Liquidity</h3>
+                        <p id="modalLiquidity"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Minimum Investment</h3>
+                        <p id="modalMinInvestment"></p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3>Category</h3>
+                    <p id="modalCategory"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
