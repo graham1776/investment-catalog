@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocations - Investment Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .allocations-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .allocations-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .allocations-header h1 {
+            color: #0066cc;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .allocations-header p {
+            color: #666;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .investor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .investor-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .investor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .investor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .investor-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .investor-type {
+            background: #0066cc;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .allocation-chart {
+            margin: 20px 0;
+        }
+        
+        .allocation-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .allocation-label {
+            width: 140px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .allocation-visual {
+            flex: 1;
+            height: 25px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin: 0 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .allocation-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+        
+        .allocation-percentage {
+            width: 40px;
+            text-align: right;
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .investor-notes {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Color scheme for different asset classes */
+        .equities { background: #0066cc; }
+        .fixed-income { background: #28a745; }
+        .real-estate { background: #fd7e14; }
+        .commodities { background: #6f42c1; }
+        .alternatives { background: #e83e8c; }
+        .digital-assets { background: #20c997; }
+        .derivatives { background: #6c757d; }
+        .cash { background: #ffc107; }
+        
+        @media (max-width: 768px) {
+            .investor-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .allocation-label {
+                width: 100px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Investment Catalog</div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="allocations.html" class="nav-link active">Allocations</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </nav>
+            </div>
+            <div class="tagline">Complete directory of investment opportunities and vehicles</div>
+        </div>
+    </header>
+
+    <div class="allocations-content">
+        <div class="allocations-header">
+            <h1>How the Smart Money Allocates</h1>
+            <p>See how sovereign wealth funds, endowments, pension funds, and legendary investors actually deploy their capital across asset classes.</p>
+        </div>
+        
+        <div class="investor-grid" id="investorGrid">
+            <!-- Cards will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script src="allocations.js"></script>
+</body>
+</html>
